@@ -50,7 +50,7 @@ public class Principale {
 
 		            System.out.println("Inserisci anni:");
 		            int anni = inserimento.nextInt();
-	        	System.out.println("Inserisci nome segretaria:");
+	        	System.out.println("Inserisci nome segretaria del manager:");
 	            String nomes = inserimento.next();
 	            
 				 Manager UnManager= new Manager(nome,id,anni,nomes);
