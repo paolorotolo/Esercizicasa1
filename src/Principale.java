@@ -11,10 +11,13 @@ public class Principale {
 	        ArrayList<Impiegato> listaImpiegati = new ArrayList<>();
 	       
 	        // Crea il manager
-	        Manager UnicoManager= null;
+	      ArrayList<Manager> listaManager = new ArrayList<>();;
 
-
-	        for (int i=0; i<3; i++){
+            
+	        System.out.println("Quanti impiegati vuoi inserire?");
+	        int N= inserimento.nextInt();
+	        
+	        for (int i=0; i<N; i++){
 	            // Chiediamo i vari parametri
 	            System.out.println("Inserisci nome:");
 	            String nome = inserimento.next();
@@ -25,33 +28,51 @@ public class Principale {
 	            System.out.println("Inserisci anni:");
 	            int anni = inserimento.nextInt();
 
-	            
-	            if (i==1){
-					
-					System.out.println("Inserisci nome segretaria:");
-		            String nomes = inserimento.next();
-					 UnicoManager= new Manager(nome,id,anni,nomes);
-                 }
-	            else {
-	            	// Creiamo per ogni ciclo 1 nuovo impiegato
-		            // Passiamo nel costruttore il nome che abbiamo appena acquisito, l'id e gli anni
+	           
+	                // Creiamo per ogni ciclo 1 nuovo impiegato
+		          // Passiamo nel costruttore il nome che abbiamo appena acquisito, l'id e gli anni
 		            Impiegato impiegato = new Impiegato(nome, id, anni);
 		         // Infine aggiungiamo l'impiegato appena creato al vettore di impiegati
 		            listaImpiegati.add(impiegato);
           
-                     }
+                    
 	        }
+	       
+	        System.out.println("Quanti manager vuoi inserire?");
+	        int M= inserimento.nextInt();
+	        
+	        for (int i=0; i<M; i++){
+	        	 System.out.println("Inserisci nome:");
+		            String nome = inserimento.next();
+
+		            System.out.println("Inserisci ID:");
+		            int id = inserimento.nextInt();
+
+		            System.out.println("Inserisci anni:");
+		            int anni = inserimento.nextInt();
+	        	System.out.println("Inserisci nome segretaria:");
+	            String nomes = inserimento.next();
+	            
+				 Manager UnManager= new Manager(nome,id,anni,nomes);
+				 
+				 listaManager.add(UnManager);
+	        }
+	        
 		for(int i = 0; i<listaImpiegati.size(); i++)
 		{
 		
 			listaImpiegati.get(i).stampainfoimpiegato();
 		}
 		
-	    
-		System.out.println("tale impiegato è anche manager");
-		//listaImpiegati.get(1).stampainfoimpiegato();
-	     UnicoManager.stampainfomanager();
+		for(int i = 0; i<listaManager.size(); i++)
+		{
 		
+			listaManager.get(i).stampainfomanager();
+		}
+		
+		
+		
+
 	
 		
 			
